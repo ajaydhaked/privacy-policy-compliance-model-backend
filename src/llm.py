@@ -2,7 +2,9 @@
 import os
 import time
 from dotenv import load_dotenv
-load_dotenv()
+current_dir = os.path.dirname(os.path.abspath(__file__))
+env_path = os.path.join(os.path.dirname(current_dir), '.env')
+load_dotenv(dotenv_path=env_path)
 
 
 from openai import OpenAI

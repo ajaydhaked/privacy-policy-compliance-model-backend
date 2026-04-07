@@ -19,6 +19,7 @@ def write_json_file(file_path, data):
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 def log(message, heading="INFO", file_path=_LOG_FILE_NAME):
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
     with open(file_path, "a", encoding="utf-8") as f:
         f.write(f"============[{heading}]============\n")
         f.write(f"{message}\n")
